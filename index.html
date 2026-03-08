@@ -4,191 +4,314 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leeds Handyman – Furniture Assembly</title>
-  <meta name="description" content="Leeds Handyman – Furniture Assembly. Kitchens, wardrobes, TV mounting, shelves, blinds and retail installations." />
+  <meta name="description" content="Leeds Handyman – Furniture Assembly. Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture in Leeds and surrounding areas." />
   <style>
+    :root{
+      --bg:#f3f3f3;
+      --card:#ffffff;
+      --text:#121212;
+      --muted:#666;
+      --line:#dddddd;
+      --shadow:0 6px 18px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:Arial,sans-serif;
-      background:#f5f5f5;
-      color:#111;
+      background:var(--bg);
+      color:var(--text);
     }
+
     header{
-      background:#111;
+      background:#0f0f0f;
       color:#fff;
-      padding:32px 20px;
       text-align:center;
+      padding:34px 20px 28px;
     }
+
     header h1{
       margin:0;
-      font-size:42px;
+      font-size:46px;
+      line-height:1.1;
     }
+
     header p{
       margin:12px 0 0;
-      color:#d8d8d8;
+      color:#d9d9d9;
       font-size:18px;
     }
+
     .top-buttons{
       text-align:center;
-      margin:22px 0 10px;
+      margin:22px 0 8px;
     }
+
     .btn{
       display:inline-block;
       margin:6px;
-      padding:14px 20px;
+      padding:14px 22px;
       border-radius:12px;
       text-decoration:none;
-      font-weight:bold;
+      font-weight:700;
+      font-size:16px;
     }
+
     .btn-wa{
       background:#25D366;
       color:#fff;
     }
+
     .btn-mail{
       background:#111;
       color:#fff;
     }
+
     .wrap{
-      max-width:1200px;
+      max-width:1240px;
       margin:0 auto;
-      padding:20px 20px 60px;
+      padding:18px 18px 56px;
     }
+
     .section{
-      background:#fff;
-      border-radius:18px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:24px;
       margin-bottom:26px;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
     }
+
     .section h2{
       margin:0 0 10px;
-      font-size:30px;
+      font-size:34px;
     }
+
     .section p{
       margin:0 0 18px;
-      color:#666;
+      color:var(--muted);
       line-height:1.5;
+      font-size:18px;
     }
-    .gallery-box{
-      min-height:120px;
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
     }
-    .note{
-      padding:14px;
-      border:1px dashed #ccc;
-      border-radius:12px;
+
+    .gallery-item{
+      display:block;
+      text-decoration:none;
+    }
+
+    .gallery img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      border-radius:14px;
+      background:#ececec;
+      box-shadow:0 4px 12px rgba(0,0,0,.10);
+      transition:transform .18s ease;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.02);
+    }
+
+    .empty{
+      padding:16px;
+      border:1px dashed #cfcfcf;
+      border-radius:14px;
       background:#fafafa;
       color:#666;
+      font-size:16px;
     }
+
+    .loading{
+      color:#666;
+      font-size:16px;
+    }
+
     footer{
       background:#111;
       color:#fff;
       text-align:center;
-      padding:24px 20px;
+      padding:22px 18px;
+      font-size:15px;
+    }
+
+    @media (max-width: 900px){
+      header h1{font-size:38px}
+      .section h2{font-size:30px}
+    }
+
+    @media (max-width: 640px){
+      header h1{font-size:32px}
+      header p{font-size:16px}
+      .section{padding:18px}
+      .section h2{font-size:27px}
+      .section p{font-size:16px}
+      .gallery img{height:210px}
+      .btn{display:block; max-width:340px; margin:8px auto}
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Leeds Handyman – Furniture Assembly</h1>
-  <p>Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture</p>
-</header>
+  <header>
+    <h1>Leeds Handyman – Furniture Assembly</h1>
+    <p>Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture</p>
+  </header>
 
-<div class="top-buttons">
-  <a class="btn btn-wa" href="https://wa.me/447858378631" target="_blank">WhatsApp 07858 378631</a>
-  <a class="btn btn-mail" href="mailto:furniture.expert14@gmail.com">furniture.expert14@gmail.com</a>
-</div>
-
-<div class="wrap">
-  <div class="section">
-    <h2>Kitchens</h2>
-    <p>Kitchen furniture assembly and installation.</p>
-    <div id="gallery-kitchens" class="gallery-box">
-      <div class="note">If nothing appears, check that the images have the tag <strong>Kitchens</strong>.</div>
-    </div>
+  <div class="top-buttons">
+    <a class="btn btn-wa" href="https://wa.me/447858378631" target="_blank" rel="noreferrer">WhatsApp 07858 378631</a>
+    <a class="btn btn-mail" href="mailto:furniture.expert14@gmail.com">furniture.expert14@gmail.com</a>
   </div>
 
-  <div class="section">
-    <h2>Wardrobes</h2>
-    <p>Wardrobe assembly and storage systems.</p>
-    <div id="gallery-wardrobes" class="gallery-box">
-      <div class="note">Images must have the tag <strong>wardrobes</strong>.</div>
-    </div>
-  </div>
+  <main class="wrap">
 
-  <div class="section">
-    <h2>TV Mounting</h2>
-    <p>Secure TV wall mounting.</p>
-    <div id="gallery-tv" class="gallery-box">
-      <div class="note">Images must have the tag <strong>tv-mounting</strong>.</div>
-    </div>
-  </div>
+    <section class="section">
+      <h2>Kitchens</h2>
+      <p>Kitchen furniture assembly and installation.</p>
+      <div id="gallery-kitchens" class="gallery">
+        <div class="loading">Loading kitchens...</div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>Shelves & Blinds</h2>
-    <p>Shelves, curtain rails and blinds fitting.</p>
-    <div id="gallery-shelves" class="gallery-box">
-      <div class="note">Images must have the tag <strong>shelves-blinds</strong>.</div>
-    </div>
-  </div>
+    <section class="section">
+      <h2>Wardrobes</h2>
+      <p>Wardrobe assembly and storage systems.</p>
+      <div id="gallery-wardrobes" class="gallery">
+        <div class="loading">Loading wardrobes...</div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>Retail Installations</h2>
-    <p>Retail fitting, shelving and display installations.</p>
-    <div id="gallery-retail" class="gallery-box">
-      <div class="note">Images must have the tag <strong>retail-installations</strong>.</div>
-    </div>
-  </div>
+    <section class="section">
+      <h2>TV Mounting</h2>
+      <p>Secure TV wall mounting.</p>
+      <div id="gallery-tv" class="gallery">
+        <div class="loading">Loading TV mounting photos...</div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>Beds & Bedroom</h2>
-    <p>Beds, dressers and bedroom furniture assembly.</p>
-    <div id="gallery-bedroom" class="gallery-box">
-      <div class="note">Images must have the tag <strong>beds-bedroom</strong>.</div>
-    </div>
-  </div>
-</div>
+    <section class="section">
+      <h2>Shelves &amp; Blinds</h2>
+      <p>Shelves, curtain rails and blinds fitting.</p>
+      <div id="gallery-shelves" class="gallery">
+        <div class="loading">Loading shelves and blinds...</div>
+      </div>
+    </section>
 
-<footer>
-  Leeds Handyman – Furniture Assembly • Leeds and surrounding areas
-</footer>
+    <section class="section">
+      <h2>Retail Installations</h2>
+      <p>Retail fitting, shelving and display installations.</p>
+      <div id="gallery-retail" class="gallery">
+        <div class="loading">Loading retail installations...</div>
+      </div>
+    </section>
 
-<script src="https://media-library.cloudinary.com/global/all.js"></script>
-<script>
-  const cloudName = "du0waqevo";
+    <section class="section">
+      <h2>Beds &amp; Bedroom</h2>
+      <p>Beds, dressers and bedroom furniture assembly.</p>
+      <div id="gallery-bedroom" class="gallery">
+        <div class="loading">Loading bedroom furniture...</div>
+      </div>
+    </section>
 
-  function renderTagGallery(containerId, tag) {
-    const container = document.getElementById(containerId);
+  </main>
 
-    const gallery = window.cloudinary.createMediaLibrary(
+  <footer>
+    Leeds Handyman – Furniture Assembly • Leeds and surrounding areas
+  </footer>
+
+  <script>
+    const cloudName = "du0waqevo";
+
+    const categories = [
       {
-        cloud_name: cloudName,
-        api_key: "257642564432372",
-        button_class: "hidden",
-        inline_container: "#" + containerId,
-        max_files: 30,
-        insert_caption: false,
-        inline_max_files: 30,
-        multiple: false,
-        default_transformations: [[{ width: 500, height: 350, crop: "fill" }]]
+        tag: "Kitchens",
+        containerId: "gallery-kitchens",
+        emptyText: "No kitchen photos found. Make sure the images in Cloudinary have the tag: Kitchens"
       },
       {
-        insertHandler: function() {}
+        tag: "wardrobes",
+        containerId: "gallery-wardrobes",
+        emptyText: "No wardrobe photos found. Make sure the images in Cloudinary have the tag: wardrobes"
+      },
+      {
+        tag: "tv-mounting",
+        containerId: "gallery-tv",
+        emptyText: "No TV mounting photos found. Make sure the images in Cloudinary have the tag: tv-mounting"
+      },
+      {
+        tag: "shelves-blinds",
+        containerId: "gallery-shelves",
+        emptyText: "No shelves/blinds photos found. Make sure the images in Cloudinary have the tag: shelves-blinds"
+      },
+      {
+        tag: "retail-installations",
+        containerId: "gallery-retail",
+        emptyText: "No retail installation photos found. Make sure the images in Cloudinary have the tag: retail-installations"
+      },
+      {
+        tag: "beds-bedroom",
+        containerId: "gallery-bedroom",
+        emptyText: "No bedroom furniture photos found. Make sure the images in Cloudinary have the tag: beds-bedroom"
       }
-    );
+    ];
 
-    gallery.show({
-      resource_type: "image",
-      tags: [tag]
-    });
-  }
+    function makeImageUrl(resource) {
+      return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${resource.public_id}.${resource.format}`;
+    }
 
-  renderTagGallery("gallery-kitchens", "Kitchens");
-  renderTagGallery("gallery-wardrobes", "wardrobes");
-  renderTagGallery("gallery-tv", "tv-mounting");
-  renderTagGallery("gallery-shelves", "shelves-blinds");
-  renderTagGallery("gallery-retail", "retail-installations");
-  renderTagGallery("gallery-bedroom", "beds-bedroom");
-</script>
+    async function fetchByTag(tag) {
+      const url = `https://res.cloudinary.com/${cloudName}/image/list/${encodeURIComponent(tag)}.json?cb=${Date.now()}`;
+      const response = await fetch(url, { cache: "no-store" });
 
+      if (!response.ok) {
+        throw new Error(`Failed to load tag list for ${tag}`);
+      }
+
+      const data = await response.json();
+      return Array.isArray(data.resources) ? data.resources : [];
+    }
+
+    function renderImages(container, resources, emptyText) {
+      if (!resources.length) {
+        container.innerHTML = `<div class="empty">${emptyText}</div>`;
+        return;
+      }
+
+      container.innerHTML = resources.map(resource => {
+        const full = makeImageUrl(resource);
+        return `
+          <a class="gallery-item" href="${full}" target="_blank" rel="noreferrer">
+            <img src="${full}" alt="${resource.public_id}">
+          </a>
+        `;
+      }).join("");
+    }
+
+    async function loadCategory({ tag, containerId, emptyText }) {
+      const container = document.getElementById(containerId);
+
+      try {
+        const resources = await fetchByTag(tag);
+        renderImages(container, resources, emptyText);
+      } catch (error) {
+        container.innerHTML = `<div class="empty">${emptyText}</div>`;
+      }
+    }
+
+    async function init() {
+      for (const category of categories) {
+        await loadCategory(category);
+      }
+    }
+
+    init();
+  </script>
 </body>
 </html>
