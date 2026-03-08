@@ -1,66 +1,161 @@
-const cloudName = "du0waqevo"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leeds Handyman – Furniture Assembly</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#f5f5f5;
+      color:#111;
+    }
+    header{
+      background:#111;
+      color:#fff;
+      padding:28px 20px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-size:34px;
+    }
+    header p{
+      margin:10px 0 0;
+      color:#d8d8d8;
+    }
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:30px 20px 60px;
+    }
+    .section{
+      background:#fff;
+      border-radius:16px;
+      padding:22px;
+      margin-bottom:24px;
+      box-shadow:0 4px 14px rgba(0,0,0,.08);
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:28px;
+      text-transform:capitalize;
+    }
+    .section p{
+      margin:0 0 18px;
+      color:#666;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+    .gallery img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      border-radius:12px;
+      background:#eee;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);
+    }
+    .empty{
+      padding:16px;
+      border:1px dashed #ccc;
+      border-radius:12px;
+      color:#666;
+      background:#fafafa;
+    }
+    .buttons{
+      text-align:center;
+      margin:20px 0 40px;
+    }
+    .btn{
+      display:inline-block;
+      margin:6px;
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .btn-wa{
+      background:#25D366;
+      color:#fff;
+    }
+    .btn-mail{
+      background:#111;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Leeds Handyman – Furniture Assembly</h1>
+  <p>Kitchens, wardrobes, TV mounting, blinds, retail installations and more</p>
+</header>
+
+<div class="buttons">
+  <a class="btn btn-wa" href="https://wa.me/447858378631" target="_blank">WhatsApp 07858 378631</a>
+  <a class="btn btn-mail" href="mailto:furniture.expert14@gmail.com">furniture.expert14@gmail.com</a>
+</div>
+
+<div class="wrap" id="portfolio">
+  <div class="section">Loading portfolio...</div>
+</div>
+
+<script>
+const cloudName = "du0waqevo";
 
 const categories = [
-"Kitchens",
-"wardrobes",
-"tv-mounting",
-"shelves-blinds",
-"retail-installations",
-"beds-bedroom"
-]
+  { folder: "Kitchens", title: "Kitchens", text: "Kitchen furniture assembly and installation." },
+  { folder: "wardrobes", title: "Wardrobes", text: "Wardrobe assembly and storage systems." },
+  { folder: "tv-mounting", title: "TV Mounting", text: "Secure TV wall mounting." },
+  { folder: "shelves-blinds", title: "Shelves & Blinds", text: "Shelves, curtain rails and blinds fitting." },
+  { folder: "retail-installations", title: "Retail Installations", text: "Shop displays and retail fitting work." },
+  { folder: "beds-bedroom", title: "Beds & Bedroom", text: "Beds, dressers and bedroom furniture." }
+];
 
-async function loadImages(folder){
-
-try{
-
-const response = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${folder}.json`)
-
-const data = await response.json()
-
-return data.resources.map(img =>
-`https://res.cloudinary.com/${cloudName}/image/upload/${img.public_id}.${img.format}`
-)
-
-}catch{
-
-return []
-
+async function fetchFolderImages(folder) {
+  try {
+    const res = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${folder}.json`);
+    if (!res.ok) throw new Error("No list");
+    const data = await res.json();
+    return (data.resources || []).map(img =>
+      `https://res.cloudinary.com/${cloudName}/image/upload/${img.public_id}.${img.format}`
+    );
+  } catch (e) {
+    return [];
+  }
 }
 
+async function renderPortfolio() {
+  const container = document.getElementById("portfolio");
+
+  const blocks = await Promise.all(
+    categories.map(async (cat) => {
+      const images = await fetchFolderImages(cat.folder);
+      return { ...cat, images };
+    })
+  );
+
+  container.innerHTML = blocks.map(cat => `
+    <div class="section">
+      <h2>${cat.title}</h2>
+      <p>${cat.text}</p>
+      <div class="gallery">
+        ${
+          cat.images.length
+            ? cat.images.map(src => `<img src="${src}" alt="${cat.title}">`).join("")
+            : `<div class="empty">No photos yet in folder: <strong>${cat.folder}</strong></div>`
+        }
+      </div>
+    </div>
+  `).join("");
 }
 
-async function buildGallery(){
+renderPortfolio();
+</script>
 
-const container = document.getElementById("portfolio")
-
-for(const folder of categories){
-
-const images = await loadImages(folder)
-
-const section = document.createElement("div")
-
-section.innerHTML = `<h2>${folder}</h2>`
-
-const gallery = document.createElement("div")
-
-gallery.className="gallery"
-
-images.forEach(src=>{
-
-const img = document.createElement("img")
-
-img.src = src
-
-gallery.appendChild(img)
-
-})
-
-section.appendChild(gallery)
-
-container.appendChild(section)
-
-}
-
-}
-
-buildGallery()
+</body>
+</html>
