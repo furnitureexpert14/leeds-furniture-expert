@@ -41,14 +41,31 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 Leeds Furniture Expert
 </header>
 
-<div class="gallery">
+<div class="gallery" id="gallery"></div>
 
-<img src="IMAGE1">
-<img src="IMAGE2">
-<img src="IMAGE3">
-<img src="IMAGE4">
+<script>
 
-</div>
+const cloudName = "du0waqevo"
+
+fetch(`https://res.cloudinary.com/${cloudName}/image/list/home.json`)
+.then(res => res.json())
+.then(data => {
+
+const gallery = document.getElementById("gallery")
+
+data.resources.forEach(img => {
+
+const image = document.createElement("img")
+
+image.src = `https://res.cloudinary.com/${cloudName}/image/upload/${img.public_id}.jpg`
+
+gallery.appendChild(image)
+
+})
+
+})
+
+</script>
 
 </body>
 </html>
