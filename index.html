@@ -1,317 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leeds Handyman – Furniture Assembly</title>
-  <meta name="description" content="Leeds Handyman – Furniture Assembly. Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture in Leeds and surrounding areas." />
-  <style>
-    :root{
-      --bg:#f3f3f3;
-      --card:#ffffff;
-      --text:#121212;
-      --muted:#666;
-      --line:#dddddd;
-      --shadow:0 6px 18px rgba(0,0,0,.08);
-      --radius:18px;
-    }
 
-    *{box-sizing:border-box}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+<title>Leeds Handyman – Furniture Assembly</title>
 
-    header{
-      background:#0f0f0f;
-      color:#fff;
-      text-align:center;
-      padding:34px 20px 28px;
-    }
+<style>
 
-    header h1{
-      margin:0;
-      font-size:46px;
-      line-height:1.1;
-    }
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
 
-    header p{
-      margin:12px 0 0;
-      color:#d9d9d9;
-      font-size:18px;
-    }
+header{
+background:#111;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
 
-    .top-buttons{
-      text-align:center;
-      margin:22px 0 8px;
-    }
+header h1{
+margin:0;
+font-size:42px;
+}
 
-    .btn{
-      display:inline-block;
-      margin:6px;
-      padding:14px 22px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:16px;
-    }
+header p{
+color:#ccc;
+margin-top:10px;
+}
 
-    .btn-wa{
-      background:#25D366;
-      color:#fff;
-    }
+.buttons{
+text-align:center;
+margin:20px;
+}
 
-    .btn-mail{
-      background:#111;
-      color:#fff;
-    }
+.btn{
+padding:14px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin:5px;
+display:inline-block;
+}
 
-    .wrap{
-      max-width:1240px;
-      margin:0 auto;
-      padding:18px 18px 56px;
-    }
+.whatsapp{
+background:#25D366;
+color:white;
+}
 
-    .section{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:24px;
-      margin-bottom:26px;
-    }
+.mail{
+background:#111;
+color:white;
+}
 
-    .section h2{
-      margin:0 0 10px;
-      font-size:34px;
-    }
+.section{
+background:white;
+margin:25px auto;
+padding:25px;
+border-radius:15px;
+max-width:1100px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
 
-    .section p{
-      margin:0 0 18px;
-      color:var(--muted);
-      line-height:1.5;
-      font-size:18px;
-    }
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:15px;
+}
 
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
-    }
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+}
 
-    .gallery-item{
-      display:block;
-      text-decoration:none;
-    }
-
-    .gallery img{
-      width:100%;
-      height:240px;
-      object-fit:cover;
-      border-radius:14px;
-      background:#ececec;
-      box-shadow:0 4px 12px rgba(0,0,0,.10);
-      transition:transform .18s ease;
-    }
-
-    .gallery img:hover{
-      transform:scale(1.02);
-    }
-
-    .empty{
-      padding:16px;
-      border:1px dashed #cfcfcf;
-      border-radius:14px;
-      background:#fafafa;
-      color:#666;
-      font-size:16px;
-    }
-
-    .loading{
-      color:#666;
-      font-size:16px;
-    }
-
-    footer{
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:22px 18px;
-      font-size:15px;
-    }
-
-    @media (max-width: 900px){
-      header h1{font-size:38px}
-      .section h2{font-size:30px}
-    }
-
-    @media (max-width: 640px){
-      header h1{font-size:32px}
-      header p{font-size:16px}
-      .section{padding:18px}
-      .section h2{font-size:27px}
-      .section p{font-size:16px}
-      .gallery img{height:210px}
-      .btn{display:block; max-width:340px; margin:8px auto}
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Leeds Handyman – Furniture Assembly</h1>
-    <p>Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture</p>
-  </header>
+<header>
+<h1>Leeds Handyman – Furniture Assembly</h1>
+<p>Kitchens, wardrobes, TV mounting, shelves, blinds, retail installations and bedroom furniture</p>
+</header>
 
-  <div class="top-buttons">
-    <a class="btn btn-wa" href="https://wa.me/447858378631" target="_blank" rel="noreferrer">WhatsApp 07858 378631</a>
-    <a class="btn btn-mail" href="mailto:furniture.expert14@gmail.com">furniture.expert14@gmail.com</a>
-  </div>
+<div class="buttons">
+<a class="btn whatsapp" href="https://wa.me/447858378631">WhatsApp 07858 378631</a>
+<a class="btn mail" href="mailto:furniture.expert14@gmail.com">furniture.expert14@gmail.com</a>
+</div>
 
-  <main class="wrap">
+<div class="section">
+<h2>Kitchens</h2>
+<div class="gallery">
 
-    <section class="section">
-      <h2>Kitchens</h2>
-      <p>Kitchen furniture assembly and installation.</p>
-      <div id="gallery-kitchens" class="gallery">
-        <div class="loading">Loading kitchens...</div>
-      </div>
-    </section>
+<img src="images/kitchens/k1.jpg">
+<img src="images/kitchens/k2.jpg">
+<img src="images/kitchens/k3.jpg">
+<img src="images/kitchens/k4.jpg">
 
-    <section class="section">
-      <h2>Wardrobes</h2>
-      <p>Wardrobe assembly and storage systems.</p>
-      <div id="gallery-wardrobes" class="gallery">
-        <div class="loading">Loading wardrobes...</div>
-      </div>
-    </section>
+</div>
+</div>
 
-    <section class="section">
-      <h2>TV Mounting</h2>
-      <p>Secure TV wall mounting.</p>
-      <div id="gallery-tv" class="gallery">
-        <div class="loading">Loading TV mounting photos...</div>
-      </div>
-    </section>
+<div class="section">
+<h2>Wardrobes</h2>
+<div class="gallery">
 
-    <section class="section">
-      <h2>Shelves &amp; Blinds</h2>
-      <p>Shelves, curtain rails and blinds fitting.</p>
-      <div id="gallery-shelves" class="gallery">
-        <div class="loading">Loading shelves and blinds...</div>
-      </div>
-    </section>
+<img src="images/wardrobes/w1.jpg">
+<img src="images/wardrobes/w2.jpg">
 
-    <section class="section">
-      <h2>Retail Installations</h2>
-      <p>Retail fitting, shelving and display installations.</p>
-      <div id="gallery-retail" class="gallery">
-        <div class="loading">Loading retail installations...</div>
-      </div>
-    </section>
+</div>
+</div>
 
-    <section class="section">
-      <h2>Beds &amp; Bedroom</h2>
-      <p>Beds, dressers and bedroom furniture assembly.</p>
-      <div id="gallery-bedroom" class="gallery">
-        <div class="loading">Loading bedroom furniture...</div>
-      </div>
-    </section>
+<div class="section">
+<h2>TV Mounting</h2>
+<div class="gallery">
 
-  </main>
+<img src="images/tv/t1.jpg">
+<img src="images/tv/t2.jpg">
 
-  <footer>
-    Leeds Handyman – Furniture Assembly • Leeds and surrounding areas
-  </footer>
+</div>
+</div>
 
-  <script>
-    const cloudName = "du0waqevo";
+<div class="section">
+<h2>Shelves & Blinds</h2>
+<div class="gallery">
 
-    const categories = [
-      {
-        tag: "Kitchens",
-        containerId: "gallery-kitchens",
-        emptyText: "No kitchen photos found. Make sure the images in Cloudinary have the tag: Kitchens"
-      },
-      {
-        tag: "wardrobes",
-        containerId: "gallery-wardrobes",
-        emptyText: "No wardrobe photos found. Make sure the images in Cloudinary have the tag: wardrobes"
-      },
-      {
-        tag: "tv-mounting",
-        containerId: "gallery-tv",
-        emptyText: "No TV mounting photos found. Make sure the images in Cloudinary have the tag: tv-mounting"
-      },
-      {
-        tag: "shelves-blinds",
-        containerId: "gallery-shelves",
-        emptyText: "No shelves/blinds photos found. Make sure the images in Cloudinary have the tag: shelves-blinds"
-      },
-      {
-        tag: "retail-installations",
-        containerId: "gallery-retail",
-        emptyText: "No retail installation photos found. Make sure the images in Cloudinary have the tag: retail-installations"
-      },
-      {
-        tag: "beds-bedroom",
-        containerId: "gallery-bedroom",
-        emptyText: "No bedroom furniture photos found. Make sure the images in Cloudinary have the tag: beds-bedroom"
-      }
-    ];
+<img src="images/shelves/s1.jpg">
+<img src="images/shelves/s2.jpg">
 
-    function makeImageUrl(resource) {
-      return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${resource.public_id}.${resource.format}`;
-    }
+</div>
+</div>
 
-    async function fetchByTag(tag) {
-      const url = `https://res.cloudinary.com/${cloudName}/image/list/${encodeURIComponent(tag)}.json?cb=${Date.now()}`;
-      const response = await fetch(url, { cache: "no-store" });
+<div class="section">
+<h2>Retail Installations</h2>
+<div class="gallery">
 
-      if (!response.ok) {
-        throw new Error(`Failed to load tag list for ${tag}`);
-      }
+<img src="images/retail/r1.jpg">
+<img src="images/retail/r2.jpg">
 
-      const data = await response.json();
-      return Array.isArray(data.resources) ? data.resources : [];
-    }
+</div>
+</div>
 
-    function renderImages(container, resources, emptyText) {
-      if (!resources.length) {
-        container.innerHTML = `<div class="empty">${emptyText}</div>`;
-        return;
-      }
+<div class="section">
+<h2>Bedroom Furniture</h2>
+<div class="gallery">
 
-      container.innerHTML = resources.map(resource => {
-        const full = makeImageUrl(resource);
-        return `
-          <a class="gallery-item" href="${full}" target="_blank" rel="noreferrer">
-            <img src="${full}" alt="${resource.public_id}">
-          </a>
-        `;
-      }).join("");
-    }
+<img src="images/bedroom/b1.jpg">
+<img src="images/bedroom/b2.jpg">
 
-    async function loadCategory({ tag, containerId, emptyText }) {
-      const container = document.getElementById(containerId);
+</div>
+</div>
 
-      try {
-        const resources = await fetchByTag(tag);
-        renderImages(container, resources, emptyText);
-      } catch (error) {
-        container.innerHTML = `<div class="empty">${emptyText}</div>`;
-      }
-    }
-
-    async function init() {
-      for (const category of categories) {
-        await loadCategory(category);
-      }
-    }
-
-    init();
-  </script>
 </body>
 </html>
